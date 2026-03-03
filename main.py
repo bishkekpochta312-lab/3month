@@ -1,1 +1,1 @@
-print("Mirdi")
+print("Mirdin")
