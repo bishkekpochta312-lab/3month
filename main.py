@@ -1,4 +1,5 @@
 import flet as ft
+from datetime import datetime
 
 def main(page:ft.Page):
     page.theme_mode = ft.ThemeMode.DARK
@@ -6,22 +7,25 @@ def main(page:ft.Page):
     history_text = ft.Text("greet history")
 
     def on_click_func(_):
-        print(name_input.value)
         name = name_input.value
         if name:
-            text_hello.value = f'Hello {name}'
+            current_time = datetime.now().strftime("%Y:%m:%d - %H:%M:%S")
+            message = f"{current_time} - Привет {name}"
+
+            text_hello.value = message
             text_hello.color = None
-            greeting_history.append(name)
+
+            greeting_history.append(message)
             history_text.value = "greet_history:\n" + "\n".join(greeting_history)
-            # print(greeting_history)
+
         else:
             text_hello.value = "Write correct name"
             text_hello.color = ft.Colors.RED
-        name_input.value = None
+
+        name_input.value = ""
         page.update()
 
-        name_input.label = "Success"
-
+    
     page.title = "My first app"
     text_hello = ft.Text(value = "Hello")
     text_hello.value = "Privet Mir"
