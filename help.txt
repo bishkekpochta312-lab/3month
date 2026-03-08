@@ -1,0 +1,37 @@
+
+
+Правило установки библиотек на Ubuntu:
+    - sudo apt update 
+    - sudo apt install .......
+
+
+Проверка версии Python:
+    - python3 --version
+
+
+Установка Python:
+    - sudo apt install python3 
+
+
+Установка доп библиотек для venv:
+    - sudo apt install python3-venv
+
+
+Создание venv:
+    - python3 -m venv venv 
+
+Активания venv:
+    - for mac/linux - source venv/bin/activate
+    - for windows - venv\Scripts\activate
+
+Деактивация:
+    - deactivate
+
+
+Уставнока flet на пк:
+    - for linux/windows - pip install flet[all]
+    - for macos - pip install flet
+
+
+Уставнока доп библиотеки:
+    - sudo apt install libmpv1
